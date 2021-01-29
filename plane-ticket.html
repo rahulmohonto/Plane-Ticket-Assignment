@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap"
         rel="stylesheet">
-    <!-- Stylesheet -->
+
     <link rel="stylesheet" href="plane-ticket.css">
 </head>
 
@@ -28,85 +28,165 @@
 
     <!--Booking Section-->
     <main class="main-content container">
-        <div class="booking-form">
-            <h3>Booking Flights</h3>
-            <div class="input-group">
-                <label for="">Flying From</label>
-                <input class="inp-style" type="text" name="" placeholder="Dhake, Bangladesh">
-            </div>
-            <div class="input-group">
-                <label for="">Flying To</label>
-                <input class="inp-style" type="text" name="" placeholder="New York, United States">
-            </div>
-            <div class="inputs">
+        <div id="booking">
+            <div class="booking-form">
+                <h3>Booking Flights</h3>
                 <div class="input-group">
-                    <label" for="">Departure</label>
+                    <label for="">Flying From</label>
+                    <input class="inp-style" type="text" name="" placeholder="Dhake, Bangladesh">
+                </div>
+                <div class="input-group">
+                    <label for="">Flying To</label>
+                    <input class="inp-style" type="text" name="" placeholder="New York, United States">
+                </div>
+                <div class="inputs">
+                    <div class="input-group">
+                        <label" for="">Departure</label>
+                            <input class="inp-style" type="date" name="">
+                    </div>
+                    <div class="input-group">
+                        <label for="">Return</label>
                         <input class="inp-style" type="date" name="">
-                </div>
-                <div class="input-group">
-                    <label for="">Return</label>
-                    <input class="inp-style" type="date" name="">
-                </div>
-            </div>
-            <div class="input-group f-class">
-                <div>
-                    <label for="">First Class ($150)</label>
-                    <input class="inp-style inp-width" type="number" name="">
-                </div>
-                <div class="plus-minus-btn">
-                    <p>+ -</p>
-                </div>
-            </div>
-
-            <div class="input-group f-class">
-                <div>
-                    <label for="">Economy ($100)</label>
-                    <input class="inp-style inp-width" type="number" name="">
-                </div>
-                <div class="plus-minus-btn">
-                    <p> <span>+</span> <span>-</span> </p>
-                </div>
-            </div>
-            <div class="calculations">
-                <div class="amount">
-                    <div class="left">
-                        <p>Subtotal</p>
                     </div>
-                    <div class="right">
-                        <p>$500</p>
+                </div>
+                <div class="input-group f-class">
+                    <div>
+                        <label for="">First Class ($150)</label>
+                        <input id="firstClassform" class="inp-style inp-width" type="number" name="" value="0">
+                    </div>
+                    <div class="plus-minus-btn">
+                        <button onclick="handleTicketChange('firstClass', true)" id="firstclassplus" type="button"
+                            class="btn btn-primary"><img src="https://img.icons8.com/android/24/000000/plus.png" />
+                        </button>
+                        <button onclick="handleTicketChange('firstClass', false)" id="firstclassminus"
+                            class="btn btn-warning"><img
+                                src="https://img.icons8.com/material-sharp/24/000000/minus.png" /></button>
+
+
+                        <!-- <p> <span>+</span><span></span> -</p> -->
                     </div>
                 </div>
 
-                <div class="amount">
-                    <div class="left">
-                        <p>Charge 10% VAT</p>
+                <div class="input-group f-class">
+                    <div>
+                        <label for="">Economy ($100)</label>
+                        <input id="economyClassform" class="inp-style inp-width" type="number" name="" value="0">
                     </div>
-                    <div class="right">
-                        <p>$50</p>
-                    </div>
-                </div>
-                <hr>
-                <div class="amount">
-                    <div class="left">
-                        <h4>Total</h4>
-                    </div>
-                    <div class="right">
-                        <p>$550</p>
+                    <div class="plus-minus-btn">
+                        <button onclick="handleTicketChange('economyClass', true)" id="economyclassplus" type="button"
+                            class="btn btn-primary"><img src="https://img.icons8.com/android/24/000000/plus.png" />
+                        </button>
+                        <button onclick="handleTicketChange('economyClass', false)" id="economyclassminus"
+                            class="btn btn-warning"><img
+                                src="https://img.icons8.com/material-sharp/24/000000/minus.png" /></button>
                     </div>
                 </div>
+                <div class="calculations">
+                    <div class="amount">
+                        <div class="left">
+                            <p>Subtotal:</p>
+                        </div>
+                        <div class="right">
+                            <p>$<span id="total-cost">0.00</span></p>
+                        </div>
+                    </div>
+
+                    <div class="amount">
+                        <div class="left">
+                            <p>Charge 10% VAT:</p>
+                        </div>
+                        <div class="right">
+                            <p>$ <span id="tax-amount">0.00</span></p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="amount">
+                        <div class="left">
+                            <h4>Total:</h4>
+                        </div>
+                        <div class="right">
+                            <p>$<span id="grand-total">0.00</span></p>
+                        </div>
+                    </div>
+                </div>
+                <button id="book" class="btn-style">Book Now</button>
             </div>
-            <button class="btn-style">Book Now</button>
+
+            <div class="booking-content">
+                <h1>discover <br> around the world</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicingelit. Provident voluptatibus quam fuga laborumalias
+                    veniam libero autem quasi maxime ullam vero nama imi dolor, architecto ab facilis eaque deserunt
+                    nobise
+                    voluptatibus quam</p>
+            </div>
         </div>
 
-        <div class="booking-content">
-            <h1>discover <br> around the world</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicingelit. Provident voluptatibus quam fuga laborumalias
-                veniam libero autem quasi maxime ullam vero nama imi dolor, architecto ab facilis eaque deserunt nobise
-                voluptatibus quam</p>
+        <div id="confirmation-area">
+
+            <div class="confirmation-section">
+                <h2 class="text-center align-items-center justify-content-center mb-3">Ticket Booking Successful</h2>
+                <h3 class="text-center align-items-center justify-content-center mb-3">Happy Journey</h3>
+
+            </div>
         </div>
+
+
         </section>
 
-        <!--Thank You-->
+        <script>
+            const bookingDisplayHiding = document.getElementById('book').addEventListener('click', function () {
+                const firstPageCapture = document.getElementById('booking');
+                firstPageCapture.style.display = "none";
+                const showConfirmationArea = document.getElementById('confirmation-area');
+                showConfirmationArea.style.display = "block";
+
+            })
+
+
+            function handleTicketChange(ticket, IsIncrease) {
+                const ticketForm = document.getElementById(ticket + 'form');
+                const ticketFormValue = parseInt(ticketForm.value);
+                let newformvalue = ticketFormValue;
+                if (IsIncrease == true) {
+                    newformvalue = ticketFormValue + 1;
+                }
+                if (IsIncrease == false && ticketFormValue > 0) {
+                    newformvalue = ticketFormValue - 1;
+                }
+                ticketForm.value = newformvalue;
+                let ticketPriceUpdate = 0;
+                if (ticket == 'firstClass') {
+                    ticketPriceUpdate = newformvalue * 150;
+                }
+                if (ticket == 'economyClass') {
+                    ticketPriceUpdate = newformvalue * 100;
+                }
+
+                calculateTotal();
+            }
+
+            function calculateTotal() {
+                const firstClassTicketCount = getTicketValue('firstClass');
+
+                const economyClassTicketCount = getTicketValue('economyClass')
+
+
+                const totalPrice = firstClassTicketCount * 150 + economyClassTicketCount * 100;
+                document.getElementById('total-cost').innerText = totalPrice;
+                taxcount = Math.round(totalPrice * .1);
+
+                const tax = document.getElementById('tax-amount').innerText = taxcount;
+                const grandcost = totalPrice + taxcount;
+                document.getElementById('grand-total').innerText = grandcost;
+
+            }
+
+            function getTicketValue(ticket) {
+                const ticketNumberCount = document.getElementById(ticket + 'form');
+                const ticketCountValue = parseInt(ticketNumberCount.value);
+                return ticketCountValue;
+            }
+        </script>
 </body>
 
 </html>

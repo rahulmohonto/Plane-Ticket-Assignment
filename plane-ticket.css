@@ -61,6 +61,7 @@ nav ul li a:hover, a.active{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    justify-content:center;
 }
 .inp-width{
     min-width: 300px;
@@ -69,7 +70,7 @@ nav ul li a:hover, a.active{
     color: #3352F2;
     font-size: 30px;
     padding: 2px;
-    margin-top: 10px;
+    margin-top: 18px;
     word-spacing: 20px;
 }
 .booking-form  .calculations{
@@ -119,4 +120,20 @@ nav ul li a:hover, a.active{
 .amount{
     display: flex;
     justify-content: space-between;
+}
+.btn-default{
+	background-color: #fff;
+}
+.input-group{
+	width: unset;
+}
+#confirmation-area{
+    display:none;
+    height:170px;
+    width:400px;
+    padding:55px;
+  margin:200px 30%;
+    box-shadow: 6px 6px 12px rgb(141, 93, 93);
+    border-radius: 12px;
+    color: rgb(220, 211, 228);
 }
