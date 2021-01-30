@@ -43,13 +43,14 @@ nav ul li a:hover, a.active{
     grid-template-columns: 2fr 3fr;
     gap: 70px;
     align-items: center;
+  
 }
 .booking-form{
     background-color: #fff;
     border: 1px solid #ddd;
     padding: 25px;
     border-radius: 5px;
-    float: left;
+    float:left;
 }
 .booking-form h3{
     margin: 10px 0px;
@@ -61,7 +62,6 @@ nav ul li a:hover, a.active{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    justify-content:center;
 }
 .inp-width{
     min-width: 300px;
@@ -78,7 +78,7 @@ nav ul li a:hover, a.active{
 }
 .booking-form  .calculations p{
     font-weight: 500;
-    margin-bottom: 10px;
+   margin-bottom: 10px;
 }
 .booking-form input{
     width: 100%;
@@ -97,7 +97,9 @@ nav ul li a:hover, a.active{
 }
 .booking-content{
     color: #fff;
-    width: 80%;
+    width: 60%;
+   
+    
 }
 .booking-content h1{
     font-size: 70px;
@@ -128,12 +130,13 @@ nav ul li a:hover, a.active{
 	width: unset;
 }
 #confirmation-area{
+    background-color:chocolate;
     display:none;
-    height:170px;
-    width:400px;
-    padding:55px;
-  margin:200px 30%;
+    height:220px;
+    width:500px;
+    padding:30px;
+    margin: 0 40%;
     box-shadow: 6px 6px 12px rgb(141, 93, 93);
     border-radius: 12px;
-    color: rgb(220, 211, 228);
+    color: rgb(254, 254, 255);
 }
